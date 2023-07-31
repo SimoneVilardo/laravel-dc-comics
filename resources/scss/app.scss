@@ -1,3 +1,4 @@
+
 @import '~bootstrap/scss/bootstrap';
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 
@@ -47,7 +48,7 @@ body {
 }
 
 .dimension {
-    height: 250px;
+    height: 350px;
 }
 
 button {
@@ -79,9 +80,14 @@ button {
     background-color: #0074e8;
 }
 
-.img-size {
-    width: 40px;
-    height: 60px;
+.img-comic {
+    width: 330px;
+    height: 350px;
+    padding: 15px;
+}
+.title_h4 {
+    font-size: 15px;
+    margin-left: 20px;
 }
 
 .pad-row {
