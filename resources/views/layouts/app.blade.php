@@ -16,10 +16,12 @@
 </head>
 
 <body>
+    @include('partials.header')
     <main>
         <img class="jumbotron" src="{{ Vite::asset('resources/img/jumbotron.jpg') }}">
         @yield('content')
     </main>
+    @include('partials.footer')
 </body>
 
 </html>

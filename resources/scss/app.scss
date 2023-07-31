@@ -1,1 +1,172 @@
 @import '~bootstrap/scss/bootstrap';
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.bg-header {
+    background-color: #0074E8;
+}
+
+.decoration {
+    cursor: pointer;
+    border-bottom: 5px solid transparent;
+
+    &:hover {
+        color: #0074e8 !important;
+        font-weight: bold !important;
+    }
+
+    &:hover {
+        border-bottom: 5px solid #0074e8;
+    }
+
+}
+
+.active_a {
+    color: #0074e8 !important;
+}
+
+.active_li {
+    border-bottom: 5px solid #0074e8;
+}
+
+.jumbotron {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    object-position: top;
+}
+
+.dimension {
+    height: 250px;
+}
+
+button {
+    background-color: #0074e8;
+    color: #fff;
+    padding: 10px 50px;
+    font-weight: 600;
+    font-size: 12px;
+    border: #0074e8;
+    margin-top: 30px;
+}
+
+.position {
+    position: relative;
+}
+
+.bage {
+    background-color: #0282F9;
+    position: absolute;
+    top: -30px;
+    left: 0;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 10px;
+}
+
+.bg-icon {
+    background-color: #0074e8;
+}
+
+.img-size {
+    width: 40px;
+    height: 60px;
+}
+
+.pad-row {
+    padding: 50px;
+}
+
+.cont {
+    background-image: url(../img/footer-bg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    .row {
+        display: flex;
+        justify-content: space-between;
+
+        .flex {
+            width: 100%;
+            display: flex;
+            background-image: url(../img/dc-logo-bg.png);
+            background-repeat: no-repeat;
+            background-position: right center;
+        }
+
+        ul {
+            padding: 40px 0;
+
+            li {
+                line-height: 1.3rem;
+                padding-right: 20px;
+
+                a {
+                    color: gray;
+                    font-size: 12px;
+                    text-decoration: none;
+                }
+
+                h4 {
+                    color: white;
+                    margin: 15px 0;
+                    font-size: 20px;
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+}
+
+.bg-footer {
+    background-color: #303030;
+
+    button {
+        background-color: #303030;
+        border: 3px solid #0074E8;
+        padding: 10px;
+        color: white;
+        font-size: 18px;
+    }
+
+    .icone {
+        display: flex;
+        align-items: center;
+
+        h3 {
+            color: #0074E8;
+            padding: 0 15px;
+        }
+
+        a {
+            padding: 0 5px;
+        }
+    }
+}
+
+.bg-show {
+    background-color: rgb(222, 221, 221);
+}
+
+.dim-show {
+    height: 230px;
+    width: 170px;
+    position: absolute;
+    top: -70%;
+}
+
+.blue-space {
+    height: 70px;
+    background-color: #0074E8;
+}
