@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Comic;
 
+use Illuminate\Support\Facades\Validator;
+
 class ComicsController extends Controller
 {
     /**
@@ -36,7 +38,7 @@ class ComicsController extends Controller
      */
     public function store(Request $request)
     {
-        $form_data = $request->all();
+        $form_data = $this->validation($request->all());
 
         $comic = new Comic();
 
@@ -88,7 +90,7 @@ class ComicsController extends Controller
      */
     public function update(Request $request, Comic $comic)
     {
-        $form_data = $request->all();
+        $form_data = $this->validation($request->all());
 
         $comic->update($form_data);
 
@@ -106,4 +108,46 @@ class ComicsController extends Controller
         $comic->delete();
         return redirect()->route('comics.index');
     }
+
+    private function validation($data)
+    {
+        $validator = Validator::make($data,
+        
+            [
+                'title'         =>  'required|max:50',
+                'description'   =>  'required',
+                'thumb'         =>  'required',
+                'cover_image'   =>  'required',
+                'thumb2'        =>  'required',
+                'price'         =>  'required|max:10',
+                'series'        =>  'required|max:20',
+                'sale_date'     =>  'required|max:10',
+                'type'          =>  'required|max:20',
+                'artists'       =>  'required',
+                'writers'       =>  'required',
+            ],
+            [
+                'title.required'        =>  'Inserisci un TITOLO ',
+                'title.max'             =>  'Il titolo deve avere una lunghezza massima di :max caratteri',
+                'description.required'  =>  'Inserisci la DESCRIZIONE',
+                'thumb.required'        =>  'Inserisci l\'immagine di copertina',
+                'cover_image.required'  =>  'Inserisci la cover image',
+                'thumb2.required'       =>  'Inserisci la seconda immagine',
+                'price.required'        =>  'Inserisci il PREZZO',
+                'price.max'             =>  'Il prezzo deve avere una lunghezza massima di :max caratteri',
+                'series.required'       =>  'Inseriscila SERIE',
+                'series.max'            =>  'La serie deve avere una lunghezza massima di :max caratteri',
+                'sale_date.required'    =>  'Inserisci la DATA DI USCITA',
+                'sale_date.max'         =>  'La data di uscita deve avere una lunghezza massima di :max caratteri',
+                'type.required'         =>  'Inserisci la TIPOLOGIA',
+                'type.max'              =>  'La tipologia deve avere una lunghezza massima di :max caratteri',
+                'artists.required'      =>  'Inserisci gli ARTISTI',
+                'writers.required'      =>  'Inserisci i SCRITTORI',
+            ]
+        
+        )->validate();
+
+        return $validator;
+    }
+
 }
