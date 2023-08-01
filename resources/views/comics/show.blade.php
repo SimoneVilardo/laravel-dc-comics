@@ -75,5 +75,9 @@
             </div>
         </div>
     </div>
+    <div class="d-flex justify-content-center p-3 m-4">
+        <a class="btn btn-warning btn-sm" href="{{ route('comics.edit', $comic->id) }}">MODIFICA FUMETTO</a>
+    </div>
+
 
 @endsection
