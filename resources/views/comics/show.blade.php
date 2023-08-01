@@ -75,10 +75,16 @@
             </div>
         </div>
     </div>
-    <div class="d-flex justify-content-center p-3 m-4">
-        <a class="btn btn-warning btn-sm" href="{{ route('comics.edit', $comic->id) }}">MODIFICA FUMETTO</a>
-        <form action="{{ route('comics.destroy', $comic->id) }}"></form>
-
+    <div class="d-flex justify-content-center align-items-center m-2">
+            <a class="btn btn-primary btn-sm" href="{{ route('comics.index', $comic->id) }}">TORNA ALLA HOME</a>
+            <a class="btn btn-warning btn-sm" href="{{ route('comics.edit', $comic->id) }}">MODIFICA FUMETTO</a>
+    </div>
+    <div class="d-flex justify-content-center align-items-center mb-3">
+        <form action="{{ route('comics.destroy', $comic->id) }}" onsubmit="return confirm('Sei sicuro di voler cancellare questo fumetto?')" method="POST">
+            @csrf
+            @method('DELETE')
+            <button type="submit" class="btn btn-danger btn-sm">CANCELLA FUMETTO</button>
+        </form>
     </div>
 
 
